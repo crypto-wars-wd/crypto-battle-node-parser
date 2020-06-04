@@ -6,7 +6,6 @@ const parseSwitcher = async (transactions) => {
       for (const operation of transaction.operations) {
         switch (operation[0]) {
           case 'transfer':
-            console.log(operation[1]);
             await confirmTransfer(operation[1]);
             break;
         }
