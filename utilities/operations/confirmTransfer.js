@@ -1,14 +1,19 @@
-const { requests } = require('utilities/request');
+const axios = require('axios');
+const config = require('config');
 
 module.exports = async (params) => {
   switch (params.to) {
     case 'crypto-battle':
-      const payload = {
-        name: params.from,
-        amount: params.amount,
-        memo: params.memo,
-      };
-      await requests.confirmTransfer({ call: payload });
-      break;
+      try {
+        const payload = {
+          name: params.from,
+          amount: params.amount,
+          memo: params.memo,
+        };
+        const result = await axios.post(config.apiUrl, payload);
+        return { result: result.data };
+      } catch (error) {
+        return { error: { message: `ERROR Rest connection ${error.config.url}` } };
+      }
   }
 };
