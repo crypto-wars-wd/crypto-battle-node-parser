@@ -10,7 +10,7 @@ module.exports = async (params) => {
           amount: params.amount,
           memo: params.memo,
         };
-        const result = await axios.post(config.apiUrl, payload);
+        const result = await axios.post(`${config.apiUrl}/confirm-transfer`, payload);
         return { result: result.data };
       } catch (error) {
         return { error: { message: `ERROR Rest connection ${error.config.url}` } };

@@ -1,8 +1,6 @@
-const { postRefsClient, lastBlockClient } = require('utilities/redis/redis');
+const { lastBlockClient } = require('utilities/redis/redis');
 
 const PARSE_ONLY_VOTES = process.env.PARSE_ONLY_VOTES === 'false';
-
-const getHashAll = async (key, client = postRefsClient) => client.hgetallAsync(key);
 
 const getLastBlockNum = async (key) => {
   if (!key) {
@@ -14,4 +12,4 @@ const getLastBlockNum = async (key) => {
   return num ? parseInt(num, 10) : process.env.START_FROM_BLOCK || 29937113;
 };
 
-module.exports = { getHashAll, getLastBlockNum };
+module.exports = { getLastBlockNum };
