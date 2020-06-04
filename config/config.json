@@ -1,0 +1,20 @@
+{
+  "production": {
+    "redis": {
+      "wobjectsRefs": 1,
+      "lastBlock": 2
+    }
+  },
+  "development": {
+    "redis": {
+      "wobjectsRefs": 1,
+      "lastBlock": 2
+    }
+  },
+  "test": {
+    "redis": {
+      "wobjectsRefs": 6,
+      "lastBlock": 7
+    }
+  }
+}
