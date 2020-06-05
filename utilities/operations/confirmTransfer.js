@@ -12,7 +12,7 @@ module.exports = async (params) => {
           cryptoType: amount[1],
           memo: params.memo,
         };
-        const result = await axios.post(`${config.apiUrl}/update-user-balance`, payload);
+        const result = await axios.post(`${config.apiUrl}/replenish-account`, payload);
         return { result: result.data };
       } catch (error) {
         return { error: { message: `ERROR Rest connection ${error.config.url}` } };
