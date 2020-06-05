@@ -5,9 +5,11 @@ module.exports = async (params) => {
   switch (params.to) {
     case 'crypto-battle':
       try {
+        const amount = params.amount.split(' ');
         const payload = {
-          name: params.from,
-          amount: params.amount,
+          senderName: params.from,
+          amount: amount[0],
+          cryptoType: amount[1],
           memo: params.memo,
         };
         const result = await axios.post(`${config.apiUrl}/update-user-balance`, payload);
