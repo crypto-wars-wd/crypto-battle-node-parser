@@ -15,7 +15,7 @@ module.exports = async (params) => {
         const result = await axios.post(`${config.apiUrl}/replenish-account`, payload);
         return { result: result.data };
       } catch (error) {
-        return { error: { message: `ERROR Rest connection ${error.config.url}` } };
+        return console.error({ error: { message: `ERROR Rest connection ${error.config.url}` } });
       }
   }
 };

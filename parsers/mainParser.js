@@ -1,4 +1,4 @@
-const { confirmTransfer } = require('utilities/operations');
+const { confirmTransfer } = require('parsers');
 
 const parseSwitcher = async (transactions) => {
   for (const transaction of transactions) {

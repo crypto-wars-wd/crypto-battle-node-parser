@@ -4,7 +4,6 @@ const { nodeUrls } = require('constants/appData');
 const { redisGetter, redisSetter } = require('utilities/redis');
 const { blockUtil } = require('utilities/steemApi');
 
-const PARSE_ONLY_VOTES = process.env.PARSE_ONLY_VOTES === 'false';
 let CURRENT_NODE_URL = nodeUrls[0];
 
 bluebird.promisifyAll(steem.api);
@@ -76,15 +75,6 @@ const loadNextBlock = async ({
 
 // return true if block exist and parsed, else - false
 const loadBlock = async (blockNum, transactionsParserCallback) => {
-  /*
-    To prevent situation when vote parser went further than the main parser,
-    check the current block less than last handled on main parser
-     */
-  if (PARSE_ONLY_VOTES) {
-    const lastBlockNumMainParse = await redisGetter.getLastBlockNum('last_block_num');
-    if (blockNum >= lastBlockNumMainParse) return false;
-  }
-
   const { block, error } = await blockUtil.getBlock(blockNum, CURRENT_NODE_URL);
   if (error) {
     console.error(error);
