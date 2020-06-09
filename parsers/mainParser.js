@@ -1,4 +1,4 @@
-const { confirmTransfer } = require('parsers');
+const { transfersParser } = require('parsers');
 
 const parseSwitcher = async (transactions) => {
   for (const transaction of transactions) {
@@ -6,7 +6,7 @@ const parseSwitcher = async (transactions) => {
       for (const operation of transaction.operations) {
         switch (operation[0]) {
           case 'transfer':
-            await confirmTransfer(operation[1]);
+            await transfersParser(operation[1]);
             break;
         }
       }
