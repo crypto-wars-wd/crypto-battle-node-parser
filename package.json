@@ -6,10 +6,15 @@
     "start": "NODE_PATH=. node ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "lodash": "^4.17.15",
+    "morgan": "~1.9.1",
+    "redis": "^3.0.2",
+    "steem": "^0.7.11"
   },
   "devDependencies": {
     "eslint": "^7.1.0",
