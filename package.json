@@ -1,0 +1,26 @@
+{
+  "name": "crypto-battle-node-parser",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "NODE_PATH=. node ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "lodash": "^4.17.15",
+    "morgan": "~1.9.1",
+    "redis": "^3.0.2",
+    "steem": "^0.7.11"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-mocha": "^7.0.1",
+    "eslint-plugin-node": "^11.1.0"
+  }
+}

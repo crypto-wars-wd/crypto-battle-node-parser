@@ -1,0 +1,20 @@
+{
+  "production": {
+    "apiUrl": "http://crypto-battle.pp.ua/api",
+    "redis": {
+      "lastBlock": 2
+    }
+  },
+  "development": {
+    "apiUrl": "http://localhost:3001/api",
+    "redis": {
+      "lastBlock": 2
+    }
+  },
+  "test": {
+    "apiUrl": "http://localhost:3001/api",
+    "redis": {
+      "lastBlock": 7
+    }
+  }
+}
